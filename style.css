@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root{
+    --bgColor: #575757;
+    --windowColor: #717171;
+    --inactiveText: rgb(131, 131, 131);
+    --greenCorrect:#91DB91;
+    --textOnGreen: #606060;
+    --darkGrey: #848484;
+    --lightGrey: #CBCBCB;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    background-color: var(--bgColor);
+    color: var(--lightGrey);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+  }
+
+
+/* Start menu */
+.gameTitle {
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: -150px;
+}
+.gameTitle h1 {
+    font-size: 4rem;
+}
+.gameTitle h3 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+.start-menu {
+    background-color: var(--windowColor);
+    height: 300px;
+    width: 400px;
+    border-radius: 40px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.062);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.start-menu .title {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.start-menu .settings {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    margin: 2rem;
+}
+
+.start-menu .settings .mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-menu .settings .mode .modeBtn {
+    background-color: var(--darkGrey);
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.start-menu .settings .mode .modeBtn.activeMode {
+    color: var(--textOnGreen);
+    background-color: var(--greenCorrect);
+}
+
+.start-menu .settings .levelSelection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.start-menu .settings .levelSelection .levelCircles {
+    display: flex;
+    margin-left: 1rem;
+}
+
+.start-menu .settings .levelSelection .levelCircles .levelCircle {
+    background-color: var(--darkGrey);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.2rem;
+    cursor: pointer;
+}
+
+.start-menu .settings .levelSelection .levelCircles .levelCircle.activeLevel {
+    background-color: var(--greenCorrect);
+}
+
+
+.btn {
+    background-color: var(--greenCorrect);
+    border: 0;
+    border-radius: 50px;
+    font-weight: 700;
+    color: var(--textOnGreen);
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:focus{
+    outline: none;
+}
+
+/* End of start menu */
+
+/* Theory lecture */
+.theory-lecture {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.question {
+    width: 50%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.keyboard {
+    background-color: var(--windowColor);
+    border-radius: 30px;
+    padding: 20px;
+    border: 2px solid rgb(87, 87, 87);
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.062);
+    display: grid;
+    grid-template-columns: repeat(30, 30px);
+    grid-template-rows: repeat(5, 60px);
+    grid-gap: 5px;
+}
+
+.key {
+    background-color: rgb(54, 54, 54);
+    border-radius: 10px;
+    border: 2px solid rgb(39, 39, 39);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.062);
+    grid-column: span 2;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+.key:active {
+    transform: scale(0.97);
+}
+
+
+.correct {
+    background-color: var(--greenCorrect);
+    border-color: var(--greenCorrect);
+    color: var(--textOnGreen);
+}
+.incorrect {
+    background-color: var(--redWrong);
+}
+
+.delete {
+    grid-column: span 4;
+}
+.tab {
+    grid-column: span 3;
+}
+.backslash {
+    grid-column: span 3;
+}
+.capslock {
+    grid-column: span 4;
+}
+.enter {
+    grid-column: span 4;
+}
+.leftshift {
+    grid-column: span 5;
+}
+.rightshift {
+    grid-column: span 5;
+}
+.leftctrl {
+    grid-column: span 3;
+}
+.windows .fa-window {
+    color: #fff;
+}
+.space {
+    grid-column: span 10;
+}
+.arrowKeys {
+    grid-column: span 7;
+    display: flex;
+    flex-direction: column;
+}
+.arrowKeys-row {
+    display: flex;
+    justify-content: center;
+}
+.arrowKey {
+    width: 75px;
+    height: 25px;
+    margin: 2.5px;
+}
+/* End of theory lecture */
+
+ /* Correct answer pop-up */
+    /* .correctAnswerPopUp {
+        background-color: var(--windowColor);
+        width: 400px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px 2px black;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    } */
+/* End of Correct answer pop-up */
+
+/* Results screen */
+.resultsScreen {
+    background-color: var(--windowColor);
+    height: 300px;
+    width: 500px;
+    border-radius: 40px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.062);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+    
+}
+
+.resultsScreen .emoji {
+    font-size: 8rem;
+    color: var(--lightGrey);
+}
+
+.resultsScreen .message {
+    font-size: 2rem;
+    color: var(--lightGrey);
+}
+
+.resultsScreen .resultsBar {
+    background-color: var(--darkGrey);
+    height: 30px;
+    width: 400px;
+    margin: 1.5rem 0;
+    border-radius: 20px;
+    overflow: hidden;
+    /* border: 1px solid #838383; */
+}
+
+
+.resultsScreen .resultsBar .resultsBar-fill {
+    background-color: #91DB91;
+    height: 30px;
+    width: 0px;
+    border-radius: 20px;
+    transition: all 1.5s ease;
+}
+
+.resultsScreen .again-btn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* End results screen */
+
+.hidden {
+    display: none;
+}
+.inactive {
+    color:var(--inactiveText);
+}

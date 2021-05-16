@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Keyboard Shortcuts</title>
+		<link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	</head>
+	<body>
+        <!-- Start menu -->
+		<div class="gameTitle">
+			<h1>Sveiki atvykę į greitųjų klavišų žaidimą</h1>
+			<h3>Pasirinkite norimus nustatymus ir spauskite mygtuką pradėti</h3>
+		</div>
+		<div class="start-menu">
+			<h2 class="title">Nustatymai</h2>
+			<div class="settings">
+				<div class="mode">
+					<div class="modeBtn theoryBtn activeMode">Teorija</div>
+					<div class="modeBtn practiceBtn">Praktika</div>
+				</div>
+				<div class="levelSelection">
+					<h3>Lygis</h3>
+					<div class="levelCircles">
+						<div class="levelCircle activeLevel" id="1lv"></div>
+						<div class="levelCircle" id="2lv"></div>
+						<div class="levelCircle" id="3lv"></div>
+					</div>
+				</div>
+			</div>
+			<button class="btn start-btn">Pradėti</button>
+		</div>
+        <!-- End of start menu -->
+
+        <!-- Theory lecture -->
+		<div class="theory-lecture hidden">
+			<div class="question">Question goes here?</div>
+			<div class="keyboard">
+				<div class="key" id="~">~</div>
+				<div class="key" id="1">1</div>
+				<div class="key" id="2">2</div>
+				<div class="key" id="3">3</div>
+				<div class="key" id="4">4</div>
+				<div class="key" id="5">5</div>
+				<div class="key" id="6">6</div>
+				<div class="key" id="7">7</div>
+				<div class="key" id="8">8</div>
+				<div class="key" id="9">9</div>
+				<div class="key" id="0">0</div>
+				<div class="key" id="-">-</div>
+				<div class="key" id="+">+</div>
+				<div class="key delete" id="Delete">Delete</div>
+				<div class="key tab" id="Tab">Tab</div>
+				<div class="key" id="q">Q</div>
+				<div class="key" id="w">w</div>
+				<div class="key" id="e">E</div>
+				<div class="key" id="r">R</div>
+				<div class="key" id="t">T</div>
+				<div class="key" id="y">Y</div>
+				<div class="key" id="u">U</div>
+				<div class="key" id="i">I</div>
+				<div class="key" id="o">O</div>
+				<div class="key" id="p">P</div>
+				<div class="key" id="[">[</div>
+				<div class="key" id="]">]</div>
+				<div class="key backslash" id="\">\</div>
+				<div class="key capslock" id="CapsLock">CapsLock</div>
+				<div class="key" id="a">A</div>
+				<div class="key" id="s">S</div>
+				<div class="key" id="d">D</div>
+				<div class="key" id="f">F</div>
+				<div class="key" id="g">G</div>
+				<div class="key" id="h">H</div>
+				<div class="key" id="j">J</div>
+				<div class="key" id="k">K</div>
+				<div class="key" id="l">L</div>
+				<div class="key" id=";">;</div>
+				<div class="key" id="'">'</div>
+				<div class="key enter" id="Enter">Enter</div>
+				<div class="key leftshift" id="Shift">Shift</div>
+				<div class="key" id="z">Z</div>
+				<div class="key" id="x">X</div>
+				<div class="key" id="c">C</div>
+				<div class="key" id="v">V</div>
+				<div class="key" id="b">B</div>
+				<div class="key" id="n">N</div>
+				<div class="key" id="m">M</div>
+				<div class="key" id=",">,</div>
+				<div class="key" id=".">.</div>
+				<div class="key" id="/">/</div>
+				<div class="key rightshift" id="Shift">Shift</div>
+				<div class="key leftctrl" id="Control">Ctrl</div>
+                <div class="key" id="Fn">Fn</div>
+                <div class="key windows" id="Windows"><i class="fab fa-windows"></i></fa-window></div>
+				<div class="key" id="Alt">Alt</div>
+				<div class="key space" id="space"></div>
+				<div class="key" id="Alt">Alt</div>
+				<div class="key" id="Control">Ctrl</div>
+                <div class="arrowKeys">
+                    <div class="arrowKeys-row">
+                        <div class="key arrowKey" id="up"><i class="fas fa-caret-up"></i></div>
+                    </div>
+                    <div class="arrowKeys-row">
+                        <div class="key arrowKey" id="left"><i class="fas fa-caret-left"></i></div>
+                        <div class="key arrowKey" id="down"><i class="fas fa-caret-down"></i></div>
+                        <div class="key arrowKey" id="right"><i class="fas fa-caret-right"></i></div>
+
+                    </div>
+                </div>
+			</div>
+		</div>
+        <!-- End of theory lecture -->
+
+		<!-- Correct answer pop-up -->
+		<!-- <div class="correctAnswerPopUp hidden">
+			<h1 class="correctMessage">Teisingai Ctrl + z</h1>
+		</div> -->
+		<!-- End of Correct answer pop-up -->
+
+		<!-- End-screen -->
+		<div class="resultsScreen hidden">
+			<div class="emoji"><i class="fas fa-angry"></i></div>
+			<h1 class="message">Gerai.</h1>
+			<div class="resultsBar">
+				<div class="resultsBar-fill"></div>
+			</div>
+			<button class="btn again-btn">Iš naujo</button>
+		<!-- End end-screen -->
+		<script src="script.js"></script>
+	</body>
+</html>
