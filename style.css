@@ -315,7 +315,7 @@
 .resultsScreen .resultsBar .resultsBar-fill {
     background-color: var(--greenCorrect);
     height: 30px;
-    width: 100px;
+    width: 0px;
     border-radius: 20px;
     transition: all 1.5s ease;
 }
