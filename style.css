@@ -3,16 +3,17 @@
 
 
 * {
-    box-sizing: border-box;
+    box-sizing: content-box;
     margin: 0;
     padding: 0;
   }
 
   :root{
-    --bgColor: #575757;
+    --bgColor: #4D4D4D;
     --windowColor: #717171;
-    --inactiveText: rgb(131, 131, 131);
-    --greenCorrect:#91DB91;
+    --windowBorder: #787878;
+    --shadow: rgba(27, 27, 27, 0.24);
+    --greenCorrect:#8DDE98;
     --textOnGreen: #606060;
     --darkGrey: #848484;
     --lightGrey: #CBCBCB;
@@ -130,8 +131,7 @@
     border-radius: 50px;
     font-weight: 700;
     color: var(--textOnGreen);
-    height: 40px;
-    width: 80px;
+    padding: 1rem 2rem;
     cursor: pointer;
 }
 
@@ -148,7 +148,7 @@
 /* Theory lecture */
 .theory-lecture {
     width: 80%;
-    height: 70%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -169,8 +169,8 @@
     background-color: var(--windowColor);
     border-radius: 30px;
     padding: 20px;
-    border: 2px solid rgb(87, 87, 87);
-    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.062);
+    border: 2px solid var(--windowBorder);
+    box-shadow: 0px 0px 5px 1.5px rgba(0, 0, 0, 0.062);
     display: grid;
     grid-template-columns: repeat(30, 30px);
     grid-template-rows: repeat(5, 60px);
@@ -180,8 +180,8 @@
 .key {
     background-color: rgb(54, 54, 54);
     border-radius: 10px;
-    border: 2px solid rgb(39, 39, 39);
-    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.062);
+    border: 1px solid rgb(39, 39, 39);
+    box-shadow: 1px 1px 2px 0.5px var(--shadow);
     grid-column: span 2;
     font-size: 15px;
     display: flex;
@@ -248,30 +248,39 @@
     height: 25px;
     margin: 2.5px;
 }
+
+
+.help {
+    margin-top: 40px;
+    height: 400px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.help .answer {
+    background-color: var(--windowColor);
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 3rem 4rem;
+}
+
+
+
+
 /* End of theory lecture */
 
- /* Correct answer pop-up */
-    /* .correctAnswerPopUp {
-        background-color: var(--windowColor);
-        width: 400px;
-        height: 200px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 5px 2px black;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-    } */
-/* End of Correct answer pop-up */
 
 /* Results screen */
 .resultsScreen {
     background-color: var(--windowColor);
     height: 300px;
-    width: 500px;
-    border-radius: 40px;
-    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.062);
+    width: 530px;
+    border-radius: 20px;
+    border: 2px solid var(--windowBorder);
+    box-shadow: 0px 0px 7px 1.5px var(--shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -292,20 +301,21 @@
 }
 
 .resultsScreen .resultsBar {
-    background-color: var(--darkGrey);
+    background-color: var(--bgColor);
+    border: 2px solid var(--windowBorder);
+    box-shadow: inset 0px 0px 7px 1px var(--shadow);
     height: 30px;
     width: 400px;
     margin: 1.5rem 0;
     border-radius: 20px;
     overflow: hidden;
-    /* border: 1px solid #838383; */
 }
 
 
 .resultsScreen .resultsBar .resultsBar-fill {
-    background-color: #91DB91;
+    background-color: var(--greenCorrect);
     height: 30px;
-    width: 0px;
+    width: 100px;
     border-radius: 20px;
     transition: all 1.5s ease;
 }

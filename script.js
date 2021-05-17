@@ -7,6 +7,8 @@ const btnStart = document.querySelector('.start-btn')
 const theoryBoard = document.querySelector('.theory-lecture')
 const question = document.querySelector('.question')
 const virtualKeys = document.querySelectorAll('.key')
+const btnSurrender = document.querySelector('.surrender')
+const answerRevealed = document.querySelector('.answer')
 const resultsScrn = document.querySelector('.resultsScreen')
 const resultsEmoji = document.querySelector('.emoji')
 const resultsMessage = document.querySelector('.message')
@@ -17,31 +19,31 @@ const shortcuts = {
     undo: {
         name: 'undo',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite atšaukti paskutinį atliktą veiksmą?',
-        keys: ['Control', 'z'],
+        keys: ['Ctrl', 'z'],
         level: 1
     },
     selectAll: {
         name: 'selectAll',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite pažymėti visą tekstą?',
-        keys: ['Control', 'a'],
+        keys: ['Ctrl', 'a'],
         level: 1
     },
     copy: {
         name: 'copy',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite nukopijuoti pažymėtą tekstą?',
-        keys: ['Control', 'c'],
+        keys: ['Ctrl', 'c'],
         level: 1
     },
     cut: {
         name: 'cut',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite iškirpti pažymėtą tekstą?',
-        keys: ['Control', 'x'],
+        keys: ['Ctrl', 'x'],
         level: 1
     },
     paste: {
         name: 'paste',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite įklijuoti nukopijuotą tekstą?',
-        keys: ['Control', 'v'],
+        keys: ['Ctrl', 'v'],
         level: 1
     },
     clipboard: {
@@ -53,13 +55,13 @@ const shortcuts = {
     find: {
         name: 'find',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite surasti tam tikrą žodį tekste?',
-        keys: ['Control', 'f'],
+        keys: ['Ctrl', 'f'],
         level: 2
     },
     redo: {
         name: 'redo',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite gražinti atšauktą veiksmą??',
-        keys: ['Control', 'y'],
+        keys: ['Ctrl', 'y'],
         level: 2
     },
     snapshot: {
@@ -126,6 +128,8 @@ const createSequence = function () {
 }
 
 const askQuestion = function () {
+    answerRevealed.classList.add('hidden')
+    btnSurrender.classList.add('hidden')
     if (sequence.length) {
         question.textContent = shortcuts[sequence[0]].theoryQuestion
         currentShortcut = shortcuts[sequence[0]].keys.slice()
@@ -233,9 +237,19 @@ virtualKeys.forEach((key) => {
       
         } else {
             resetCurrentQuestion()
-            if(scoreCurrentQuestion) scoreCurrentQuestion--
+            if(scoreCurrentQuestion) scoreCurrentQuestion -= 2
+            if(scoreCurrentQuestion < 0) {
+                scoreCurrentQuestion = 0
+                btnSurrender.classList.remove('hidden')
+            }
         }
     })
+})
+
+btnSurrender.addEventListener('click', () => {
+    btnSurrender.classList.add('hidden')
+    answerRevealed.classList.remove('hidden')
+    answerRevealed.textContent = shortcuts[sequence[0]].keys.join(' + ')
 })
 
 
