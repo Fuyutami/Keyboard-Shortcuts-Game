@@ -58,12 +58,6 @@ const shortcuts = {
         keys: ['Ctrl', 'f'],
         level: 2
     },
-    redo: {
-        name: 'redo',
-        theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite gražinti atšauktą veiksmą??',
-        keys: ['Ctrl', 'y'],
-        level: 2
-    },
     snapshot: {
         name: 'snapshot',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite atlikti ekrano nuotrauką?',
@@ -74,6 +68,12 @@ const shortcuts = {
         name: 'emoji',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite įterpti emoji?',
         keys: ['Windows', ';'],
+        level: 2
+    },
+    openClosedTab: {
+        name: 'openClosedTab',
+        theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite atidaryti netyčia uždarytą naršyklės skirtuką?',
+        keys: ['Ctrl', 'Shift', 't'],
         level: 2
     }
 }
