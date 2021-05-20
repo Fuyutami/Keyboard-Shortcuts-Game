@@ -9,13 +9,13 @@
   }
 
   :root{
-    --bgColor: #4D4D4D;
+    --bgColor: #464646;
     --windowColor: #717171;
     --windowBorder: #787878;
     --shadow: rgba(27, 27, 27, 0.24);
     --greenCorrect:#8DDE98;
-    --textOnGreen: #606060;
-    --darkGrey: #848484;
+    --textOnGreen: #464646;
+    --darkGrey: #6E6E6E;
     --lightGrey: #CBCBCB;
   }
 
@@ -38,92 +38,45 @@
 
 
 /* Start menu */
-.gameTitle {
-    text-align: center;
-    margin-bottom: 70px;
-    margin-top: -150px;
+.startPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px;
 }
-.gameTitle h1 {
+
+.startPageContainer h1 {
     font-size: 4rem;
+    font-weight: 400;
 }
-.gameTitle h3 {
+
+.startPageContainer h3 {
     font-size: 2rem;
     font-weight: 400;
+    margin-top: 8px;
 }
-.start-menu {
-    background-color: var(--windowColor);
-    height: 300px;
-    width: 400px;
-    border-radius: 40px;
-    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.062);
+
+.levelSelection {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
+    margin: 30px 0;
 }
 
-.start-menu .title {
-    font-size: 3rem;
-    font-weight: 400;
-    margin: 0;
-}
-
-.start-menu .settings {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5rem;
-    margin: 2rem;
-}
-
-.start-menu .settings .mode {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.start-menu .settings .mode .modeBtn {
-    background-color: var(--darkGrey);
-    width: 100px;
-    height: 30px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0.5rem;
-    cursor: pointer;
-}
-
-.start-menu .settings .mode .modeBtn.activeMode {
-    color: var(--textOnGreen);
-    background-color: var(--greenCorrect);
-}
-
-.start-menu .settings .levelSelection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.5rem;
-}
-
-.start-menu .settings .levelSelection .levelCircles {
-    display: flex;
-    margin-left: 1rem;
-}
-
-.start-menu .settings .levelSelection .levelCircles .levelCircle {
-    background-color: var(--darkGrey);
+.levelSelection .levelCircle {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    margin: 0.2rem;
+    background-color: var(--darkGrey);
+    margin: 0 5px;
     cursor: pointer;
 }
 
-.start-menu .settings .levelSelection .levelCircles .levelCircle.activeLevel {
-    background-color: var(--greenCorrect);
+.levelSelection .levelCircle.activeLevel{
+   background-color: var(--greenCorrect);
 }
 
+.start-btn {
+    margin-top: 10px;
+}
 
 .btn {
     background-color: var(--greenCorrect);
@@ -156,8 +109,7 @@
 }
 
 .question {
-    width: 50%;
-    font-size: 30px;
+    font-size: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,10 +119,10 @@
 
 .keyboard {
     background-color: var(--windowColor);
-    border-radius: 30px;
+    border-radius:20px;
     padding: 20px;
-    border: 2px solid var(--windowBorder);
-    box-shadow: 0px 0px 5px 1.5px rgba(0, 0, 0, 0.062);
+    /* border: 2px solid var(--windowBorder);
+    box-shadow: 0px 0px 5px 1.5px rgba(0, 0, 0, 0.062); */
     display: grid;
     grid-template-columns: repeat(30, 30px);
     grid-template-rows: repeat(5, 60px);
@@ -178,10 +130,11 @@
 }
 
 .key {
-    background-color: rgb(54, 54, 54);
+    background-color: var(--bgColor);
+    color: var(--lightGrey);
     border-radius: 10px;
-    border: 1px solid rgb(39, 39, 39);
-    box-shadow: 1px 1px 2px 0.5px var(--shadow);
+    /* border: 1px solid rgb(39, 39, 39); */
+    /* box-shadow: 1px 1px 2px 0.5px var(--shadow); */
     grid-column: span 2;
     font-size: 15px;
     display: flex;
@@ -259,9 +212,7 @@
     justify-content: center;
 }
 .help .answer {
-    background-color: var(--windowColor);
-    border-radius: 10px;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 500;
     text-align: center;
     padding: 3rem 4rem;
@@ -275,19 +226,13 @@
 
 /* Results screen */
 .resultsScreen {
-    background-color: var(--windowColor);
-    height: 300px;
-    width: 530px;
-    border-radius: 20px;
-    border: 2px solid var(--windowBorder);
-    box-shadow: 0px 0px 7px 1.5px var(--shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     user-select: none;
-    
+    margin-top: -100px;
 }
 
 .resultsScreen .emoji {
@@ -301,9 +246,7 @@
 }
 
 .resultsScreen .resultsBar {
-    background-color: var(--bgColor);
-    border: 2px solid var(--windowBorder);
-    box-shadow: inset 0px 0px 7px 1px var(--shadow);
+    background-color: var(--darkGrey);
     height: 30px;
     width: 400px;
     margin: 1.5rem 0;

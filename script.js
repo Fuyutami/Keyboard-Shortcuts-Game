@@ -1,7 +1,6 @@
 'use strict'
 
-const titleOfGame = document.querySelector('.gameTitle')
-const menuStart = document.querySelector('.start-menu')
+const startPageContainer = document.querySelector('.startPageContainer')
 const levelBtns = document.querySelectorAll('.levelCircle')
 const btnStart = document.querySelector('.start-btn')
 const theoryBoard = document.querySelector('.theory-lecture')
@@ -62,7 +61,7 @@ const shortcuts = {
         name: 'snapshot',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite atlikti ekrano nuotrauką?',
         keys: ['Shift','Windows', 's'],
-        level: 2
+        level: 3
     },
     emoji: {
         name: 'emoji',
@@ -74,7 +73,7 @@ const shortcuts = {
         name: 'openClosedTab',
         theoryQuestion: 'Kokią mygtukų kombinaciją reikia spausti, jei norite atidaryti netyčia uždarytą naršyklės skirtuką?',
         keys: ['Ctrl', 'Shift', 't'],
-        level: 2
+        level: 3
     }
 }
 
@@ -198,20 +197,22 @@ const showResults = function () {
 //     gameLevel = 2
 // })
 
-levelBtns.forEach(levelBtn => {
-    levelBtn.addEventListener('click', () => {
-        levelBtns.forEach(levelBtn2 => {
-            levelBtn2.classList.remove('activeLevel')
-        })
-        levelBtn.classList.add('activeLevel')
-        gameLevel = +levelBtn.id[0]
-        console.log(gameLevel)
-    })
+
+levelBtns.forEach((levelBtn, idx) => {
+   levelBtn.addEventListener('click', () => {
+       gameLevel = idx+1
+       levelBtns.forEach((levelBtn2, idx2) => {
+            if (idx2 <= idx) {
+                levelBtn2.classList.add('activeLevel')
+            } else {
+                levelBtn2.classList.remove('activeLevel')
+            }
+       })
+   })
 })
 
 btnStart.addEventListener('click', () => {
-    titleOfGame.classList.add('hidden')
-    menuStart.classList.add('hidden')
+    startPageContainer.classList.add('hidden')
     theoryBoard.classList.remove('hidden')
     createSequence()
     console.log(sequence)
@@ -255,8 +256,7 @@ btnSurrender.addEventListener('click', () => {
 
 btnAgain.addEventListener('click', () => {
     resultsScrn.classList.add('hidden')
-    titleOfGame.classList.remove('hidden')
-    menuStart.classList.remove('hidden')
+    startPageContainer.classList.remove('hidden')
     scorePlayerTotal = 0
     resultsBar.style.width = '0px'
 })
